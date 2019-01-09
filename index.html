@@ -5,17 +5,35 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
 </head>
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('.navButton1').hover(function() {
+                $('.headerBox').toggleClass("Sel01");
+            });
+            $('.navButton2').hover(function() {
+                $('.headerBox').toggleClass("Sel02");
+            });
+            $('.navButton3').hover(function() {
+                $('.headerBox').toggleClass("Sel03");
+            });
+            $('.navButton4').hover(function() {
+                $('.headerBox').toggleClass("Sel04");
+            });
+        });
+    </script>
 <body>
     <!--=======================HEADER=======================-->
     <header class="headerBox">
         <nav class="navLinkBox">
             <ul>
-                <li><a class="text">HOME</a><div class="borderLine"></div></li>
-                <li><a class="text">WORKS</a><div class="borderLine"></div></li>
-                <li><a class="text">ABOUT</a><div class="borderLine"></div></li>
-                <li><a class="text">CONTACT</a><div class="borderLine"></div></li>
+                <li><a class="navButton1 text">HOME</a><div class="borderLine"></div></li>
+                <li><a class="navButton2 text">WORKS</a><div class="borderLine"></div></li>
+                <li><a class="navButton3 text">ABOUT</a><div class="borderLine"></div></li>
+                <li><a class="navButton4 text">CONTACT</a><div class="borderLine"></div></li>
             </ul>
         </nav>
         <img src="assets/svg/Twitter_Logo_WhiteOnImage.svg" alt="TwitterIcon" width="50px" height="50px">
@@ -43,6 +61,7 @@
             </div>
             <img src="assets/svg/nextbutton.svg" class="button nextButton">
             <img src="assets/svg/nextbutton.svg" class="button backButton">
+            <!--=======================ABOUTME=======================-->
             <div class="aboutmeBox box">
                 <h2 class="text">ABOUT ME</h2>
                 <div class="aTextBox">
@@ -54,10 +73,12 @@
                 </div>
             </div>
         </main>
+        <!--=======================TYPE=======================-->
         <div class="amBox">
             <img src="assets/img/ty01.png">
             <img src="assets/img/ty02.png" class="amBoxLayer">
         </div>
+        <!--=======================FOOTER=======================-->
         <footer>
             <small class="text">&copy; 2018 YUYA MATOBA</small>
         </footer>
