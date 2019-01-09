@@ -1,0 +1,250 @@
+@charset "Shift_JIS";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #524942;
+}
+
+.text {
+    font-family: "M+ 1p";
+    font-weight: normal;
+}
+
+/*----------ANIMATION----------*/
+
+@keyframes UleftToCenter {
+    15% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+    100% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+    }
+}
+@keyframes BleftToCenter {
+    15% {
+        clip-path: polygon(0 100%, 0% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    }
+}
+
+
+/*----------NAV----------*/
+
+.headerBox * {
+    width: 100%;
+}
+
+.headerBox {
+    clip-path: polygon(100% 0,100% 100%,175px 100%,125px 75%,75px 100%,0 100%,0 0);
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    height: 50px;
+    padding-bottom: 10px;
+    z-index: 2;
+}
+
+.headerBox img {
+    width: auto;
+    padding-right: 1.5%;
+}
+
+.navLinkBox {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navLinkBox ul {
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    list-style-type: none;
+    display: flex;
+}
+
+.navLinkBox li {
+    position: relative;
+    width: auto;
+    height: 100%;
+    left: 10px;
+}
+
+.navLinkBox a {
+    display: flex;
+    margin-left: 80px;
+    align-items: center;
+    color: white;
+    width: auto;
+    font-size: 14px;
+    letter-spacing: 10px;
+}
+
+.borderLine {
+    position: absolute;
+    border-right: solid 1px white;
+    width: auto;
+    height: 25%;
+    top: 40%;
+    margin-left: 40px;
+}
+
+/*----------KEYIMAGE----------*/
+
+.keyImage {
+    position: relative;
+    width: 100%;
+    top: 40px;
+}
+
+
+.backImage {
+    animation-duration: 1.5s;
+    animation-name: UleftToCenter;
+    animation-fill-mode: forwards;
+    background-color: #524942;
+}
+.keyImage img {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    bottom: auto;
+}
+.keyLayer{
+    clip-path: polygon(0 0, 100% 0, 100% 700px, 0 700px);
+}
+/*----------MAIN----------*/
+
+.content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 650px;
+}
+
+main {
+    position: relative;
+    width: 1000px;
+    margin: auto;
+}
+
+
+
+.box {
+    position: static;
+    background-color: #c9c0af;
+    border-radius: 15px;
+    border: solid 3px #876002;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    ;
+}
+
+.box h2 {
+    position: relative;
+    top: -50px;
+    height: 0;
+    color: white;
+    letter-spacing: 6px;
+}
+
+/*----------WORL----------*/
+
+.wThumbnailBOX {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.projectsBox img {
+    margin: 5px;
+    width: 22%;
+    height: 22%;
+    filter: saturate(0%);
+}
+
+.projectsBox img:hover {
+    transition-duration: 0.25s;
+    filter: saturate(100%);
+}
+
+.button {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    margin: 0;
+    padding: 0;
+    top: 63px;
+}
+
+.nextButton {
+    right: -40px;
+}
+
+.backButton {
+    transform: scale(-1, 1);
+    left: -40px;
+}
+
+/*----------ABOUTME----------*/
+
+.aboutmeBox {
+    margin-top: 100px;
+    height: 500px;
+}
+
+.aTextBox {
+    position: absolute;
+    right: 0;
+    margin: 5% 10% 0% 0%;
+}
+
+.amBox {
+    position: absolute;
+    bottom: 0px;
+}
+
+.amBoxLayer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.amBox img {
+    width: 500px;
+}
+
+.aboutmeBox h3 {
+    font-size: 30px;
+    letter-spacing: 10px;
+    line-height: 100px;
+}
+
+.aboutmeBox p {
+    font-size: 15px;
+    letter-spacing: 5px;
+    line-height: 35px;
+}
+
+/*----------FOOTER----------*/
+
+footer {
+    background-color: black;
+    position: absolute;
+    padding-top: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 5px;
+}

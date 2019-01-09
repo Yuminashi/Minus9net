@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+
+        .amBox{
+            position: absolute;
+            margin-left: 100px;
+        }
+        .amBoxLayer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+        }
+        .amBox img{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="amBox">
+        <img src="assets/img/ty01.png">
+        <img src="assets/img/ty02.png" class="amBoxLayer">
+    </div>
+</body>
+</html>

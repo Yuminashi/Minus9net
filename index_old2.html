@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #524942;
+        }
+        /*----------NAV----------*/
+        .headerBox *{
+            width: 100%;
+        }
+        .headerBox {
+            background-color: black ;
+            display: flex;
+            height: 50px;
+            padding-bottom: 10px;
+        }
+        .headerBox img {
+            width: auto;
+            padding-right: 1.5%;
+        }
+        .navLinkBox {
+            margin-top: auto ;
+            margin-bottom: auto ;
+        }
+        .navLinkBox ul {
+            margin: 0;
+            padding: 0;
+            width: 70%;
+            list-style-type: none;
+            display: flex;
+        }
+        .navLinkBox li {
+            position: relative;
+            width: auto;
+            height: 100% ;
+            left: 10px ;
+        }
+        .navLinkBox a {
+            display: flex;
+            margin-left: 80px;
+            align-items: center;
+            color: white;
+            width: auto ;
+            font-size: 14px ;
+            font-family: "M+ 1p";
+            letter-spacing: 10px;
+        }
+        .borderLine {
+            position: absolute ;
+            border-right:solid 1px white ;
+            width: auto ;
+            height: 25% ;
+            top: 40% ;
+            margin-left: 40px;
+        }
+        /*----------HEADER----------*/
+        .keyImage {
+            position:absolute;
+            width:100%;
+            top: 40px;
+            background-color: #524942;
+        }
+        .keyImage img{
+            width:100%;
+            top: auto;
+            bottom: auto;
+        }
+        .keyLayer{
+            position:absolute;
+            bottom:0px;
+            left:0px;
+            width:100%;
+        }
+        @keyframes SquareToTriangle {
+            15% {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+            100% {
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+        .keyImage{
+            clip-path: polygon(175px 20px, 100% 20px, 100% 650px, 0 650px, 0 17px, 75px 20px, 125px 0px);
+        }
+        .backImage{
+            animation-duration: 1.5s;
+            animation-name: SquareToTriangle;
+            animation-fill-mode: forwards;
+        }
+        /*----------WORKS----------*/
+        .worksBox{
+            position: absolute;
+            width: 1000px;
+            height: 545px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            margin-top: 600px;
+            display: inline;
+            background-image: url(assets/img/workTopBox.png);
+        }
+        .worksThumbnailBox{
+            margin-top: 60px;
+        }
+        .thumbnailRow{
+            position: static;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .thumbnailRow img{
+            margin: 5px;
+            width: 28%;
+            height: 28%;
+            filter: saturate(0%);
+        }
+        .button{
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            margin: 0;
+            padding: 0;
+            top: 40%;
+        }
+        .nextButton{
+            right: -110px;
+        }
+        .backButton{
+            transform: scale(-1, 1);
+            left: -110px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="headerBox">
+        <nav class="navLinkBox">
+            <ul>
+                <li><a>HOME</a><div class="borderLine"></div></li>
+                <li><a>WORKS</a><div class="borderLine"></div></li>
+                <li><a>ABOUT</a><div class="borderLine"></div></li>
+                <li><a>CONTACT</a><div class="borderLine"></div></li>
+            </ul>
+        </nav>
+        <img src="assets/svg/Twitter_Logo_WhiteOnImage.svg" alt="TwitterIcon" width="50px" height="50px">
+        <img src="assets/svg/skechfab-logo-black.svg" alt="skechfabIcon" width="50px" height="50px">
+    </header>
+    
+    <div class="keyImage">
+        <img src="assets/img/003.png" alt="wireImage" class="wireImage">
+        <div class="keyLayer">
+            <img src="assets/img/002.png" alt="backImage" class="backImage">
+            <div class="keyLayer">
+                <img src="assets/img/001.png" alt="charaImage" class="charaImage">
+            </div>
+        </div>
+    </div>
+    
+    <div class="worksBox">
+       <div class="worksThumbnailBox">
+           <div class="thumbnailRow">
+                <img src="assets/img/Home/alice_g_1000_600.png" alt="worksThumbnail_1">
+                <img src="assets/img/Home/alice_m_1000_600.png" alt="worksThumbnail_2">
+                <img src="assets/img/Home/april_m_1000_600.png" alt="worksThumbnail_3">
+            </div>
+            <div class="thumbnailRow">
+                <img src="assets/img/Home/harizuri_g_1000_600.png" alt="worksThumbnail_4">
+                <img src="assets/img/Home/harizuri_m_1000_600.png" alt="worksThumbnail_5">
+                <img src="assets/img/Home/harizuri_mv_1000_600.png" alt="worksThumbnail_6">
+            </div>
+        </div>
+        <img src="assets/svg/nextbutton.svg" class="button nextButton">
+        <img src="assets/svg/nextbutton.svg" class="button backButton">
+     </div>
+</body>
+</html>
