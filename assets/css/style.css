@@ -3,14 +3,42 @@
     margin: 0;
     padding: 0;
 }
-
+/*----------PUBLIC----------*/
 body {
     background-color: #524942;
 }
 
-.text {
-    font-family: "M+ 1p";
+h1 {
+    font-family: "M PLUS Rounded 1c";
     font-weight: normal;
+}
+
+h2 {
+    font-family: "M PLUS Rounded 1c";
+    font-weight: normal;
+    letter-spacing: 6px;
+}
+
+h3 {
+    font-family: "M PLUS Rounded 1c";
+    font-weight: normal;
+    font-size: 30px;
+    letter-spacing: 10px;
+}
+
+p {
+    font-family: "M PLUS Rounded 1c";
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: 5px;
+    line-height: 35px;
+}
+
+small {
+    font-family: "M PLUS Rounded 1c";
+    font-weight: normal;
+    font-size: 12px;
+    letter-spacing: 5px;
 }
 
 /*----------ANIMATION----------*/
@@ -20,9 +48,10 @@ body {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
     }
     100% {
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+        clip-path: polygon(100% 0, 100% 0, 100% 700px, 0 100%, 0 700px);
     }
 }
+
 @keyframes BleftToCenter {
     15% {
         clip-path: polygon(0 100%, 0% 100%, 0 100%);
@@ -40,14 +69,32 @@ body {
 }
 
 .headerBox {
-    clip-path: polygon(100% 0,100% 100%,180px 100%,130px 75%,80px 100%,0 100%,0 0);
+    clip-path: polygon(100% 0, 100% 100%, 180px 100%, 130px 75%, 80px 100%, 0 100%, 0 0);
     position: absolute;
     width: 100%;
-    background-color: black;
+    background: black;
     display: flex;
     height: 50px;
     padding-bottom: 10px;
-    z-index: 2;
+    z-index: 1;
+    transition-property: all;
+    transition-duration: 0.25s;
+}
+
+.headerBox.navHover01 {
+    clip-path: polygon(100% 0, 100% 100%, 180px 100%, 130px 75%, 80px 100%, 0 100%, 0 0);
+}
+
+.headerBox.navHover02 {
+    clip-path: polygon(100% 0, 100% 100%, 360px 100%, 310px 75%, 260px 100%, 0 100%, 0 0);
+}
+
+.headerBox.navHover03 {
+    clip-path: polygon(100% 0, 100% 100%, 550px 100%, 500px 75%, 450px 100%, 0 100%, 0 0);
+}
+
+.headerBox.navHover04 {
+    clip-path: polygon(100% 0, 100% 100%, 750px 100%, 700px 75%, 650px 100%, 0 100%, 0 0);
 }
 
 .headerBox img {
@@ -63,7 +110,7 @@ body {
 .navLinkBox ul {
     margin: 0;
     padding: 0;
-    width: 70%;
+    width: 700px;
     list-style-type: none;
     display: flex;
 }
@@ -73,9 +120,11 @@ body {
     width: auto;
     height: 100%;
     left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.navLinkBox a {
+.navLinkBox p {
     display: flex;
     margin-left: 80px;
     align-items: center;
@@ -86,12 +135,16 @@ body {
     padding-left: 8px;
 }
 
-.borderLine {
+.navLinkBox a {
+    text-decoration: none;
+}
+
+.navLine {
     position: absolute;
     border-right: solid 1px white;
     width: 100%;
-    height: 25%;
-    top: 40%;
+    height: 10%;
+    top: 27%;
     margin-left: 40px;
 }
 
@@ -101,6 +154,26 @@ body {
     position: relative;
     width: 100%;
     top: 40px;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 700px, 0 700px);
+}
+
+.keyImage h1 {
+    position: absolute;
+    color: white;
+    left: 310px;
+    top: 200px;
+    font-size: 50px;
+    letter-spacing: 15px;
+    text-align: right;
+    line-height: 50px;
+}
+.titleLogo_9{
+    margin-left: 10px;
+    font-size: 120px;
+}
+.titleLogo_net{
+    font-size: 30px;
 }
 
 
@@ -108,8 +181,9 @@ body {
     animation-duration: 1.5s;
     animation-name: UleftToCenter;
     animation-fill-mode: forwards;
-    background-color: #524942;
+
 }
+
 .keyImage img {
     position: absolute;
     bottom: 0px;
@@ -117,9 +191,7 @@ body {
     width: 100%;
     bottom: auto;
 }
-.keyLayer{
-    clip-path: polygon(0 0, 100% 0, 100% 700px, 0 700px);
-}
+
 /*----------MAIN----------*/
 
 .content {
@@ -135,8 +207,6 @@ main {
     margin: auto;
 }
 
-
-
 .box {
     position: static;
     background-color: #c9c0af;
@@ -151,35 +221,25 @@ main {
     top: -50px;
     height: 0;
     color: white;
-    letter-spacing: 6px;
 }
 
 /*----------WORL----------*/
 
-.wThumbnailBOX {
-
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: center;
-    display: flex;
+.projectsBox {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
-.projectsBox img {
-    margin: 5px;
-    width: 22%;
-    height: 22%;
-    filter: saturate(0%);
+.pItems {
+    width: 98%;
 }
 
-.projectsBox img:hover {
-    transition-duration: 0.25s;
-    filter: saturate(100%);
-}
-
-.button {
+.navButton {
     position: absolute;
     width: 8%;
-    height: 8%;
+    height: 13%;
     margin: 0;
     padding: 0;
     top: 63px;
@@ -224,15 +284,7 @@ main {
 }
 
 .aboutmeBox h3 {
-    font-size: 30px;
-    letter-spacing: 10px;
     line-height: 100px;
-}
-
-.aboutmeBox p {
-    font-size: 15px;
-    letter-spacing: 5px;
-    line-height: 35px;
 }
 
 /*----------FOOTER----------*/
@@ -246,6 +298,4 @@ footer {
     height: 35px;
     color: white;
     text-align: center;
-    font-size: 14px;
-    letter-spacing: 5px;
 }

@@ -1,39 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
-</head>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script type="text/javascript">
         $(function() {
-            $('.navButton1').hover(function() {
-                $('.headerBox').toggleClass("Sel01");
+            $('.navButton01').hover(function() {
+                $('.headerBox').toggleClass("navHover01");
             });
-            $('.navButton2').hover(function() {
-                $('.headerBox').toggleClass("Sel02");
+        });
+        $(function() {
+            $('.navButton02').hover(function() {
+                $('.headerBox').toggleClass("navHover02");
             });
-            $('.navButton3').hover(function() {
-                $('.headerBox').toggleClass("Sel03");
+        });
+        $(function() {
+            $('.navButton03').hover(function() {
+                $('.headerBox').toggleClass("navHover03");
             });
-            $('.navButton4').hover(function() {
-                $('.headerBox').toggleClass("Sel04");
+        });
+        $(function() {
+            $('.navButton04').hover(function() {
+                $('.headerBox').toggleClass("navHover04");
             });
         });
     </script>
+    <link rel="stylesheet" href="assets/plugin/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugin/assets/owl.theme.default.min.css">
+    <script src="assets/plugin/owl.carousel.js"></script>
+    <script src="assets/plugin/jquery.mousewheel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                loop: true,
+                nav: false,
+                margin: 0,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    960: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            });
+            var owl = $('.owl-carousel');
+            owl.owlCarousel();
+            $('.nextButton').click(function() {
+                owl.trigger('next.owl.carousel');
+            })
+            $('.backButton').click(function() {
+                owl.trigger('prev.owl.carousel', [300]);
+            })
+        })
+    </script>
+</head>
+
 <body>
     <!--=======================HEADER=======================-->
     <header class="headerBox">
         <nav class="navLinkBox">
             <ul>
-                <li><a class="navButton1 text">HOME</a><div class="borderLine"></div></li>
-                <li><a class="navButton2 text">WORKS</a><div class="borderLine"></div></li>
-                <li><a class="navButton3 text">ABOUT</a><div class="borderLine"></div></li>
-                <li><a class="navButton4 text">CONTACT</a><div class="borderLine"></div></li>
+                <a href="index.html">
+                    <li class="navButton01">
+                        <p>HOME</p>
+                        <div class="navLine"></div>
+                    </li>
+                </a>
+                <a href="index.html">
+                    <li class="navButton02">
+                        <p>WORKS</p>
+                        <div class="navLine"></div>
+                    </li>
+                </a>
+                <a href="index.html">
+                    <li class="navButton03">
+                        <p>ABOUT</p>
+                        <div class="navLine"></div>
+                    </li>
+                </a>
+                <a href="index.html">
+                    <li class="navButton04">
+                        <p>CONTACT</p>
+                        <div class="navLine"></div>
+                    </li>
+                </a>
             </ul>
         </nav>
         <img src="assets/svg/Twitter_Logo_WhiteOnImage.svg" alt="TwitterIcon" width="50px" height="50px">
@@ -41,47 +104,60 @@
     </header>
     <!--=======================KEYIMAGE=======================-->
     <div class="keyImage">
-       <div class="keyLayer">
-        <img src="assets/img/003.png" alt="wireImage" >
-        <img src="assets/img/002.png" alt="backImage" class="backImage">
-        <img src="assets/img/001.png" alt="charaImage">
+        <div class="keyLayer">
+            <img src="assets/img/003.png" alt="wireImage">
+            <img src="assets/img/002.png" alt="backImage" class="backImage">
+            <img src="assets/img/001.png" alt="charaImage">
+            <h1>MINUS<span class="titleLogo_9">9</span><br><span class="titleLogo_net">.NET</span></h1>
         </div>
     </div>
     <!--=======================CONTENT=======================-->
     <div class="content">
         <main>
-            <div class="projectsBox box">
-                <h2 class="text">WORKS</h2>
-                <div class="wThumbnailBOX">
-                    <img src="assets/img/Home/alice_g_1000_600.png" alt="worksThumbnail_1">
-                    <img src="assets/img/Home/alice_m_1000_600.png" alt="worksThumbnail_2">
-                    <img src="assets/img/Home/april_m_1000_600.png" alt="worksThumbnail_3">
-                    <img src="assets/img/Home/harizuri_g_1000_600.png" alt="worksThumbnail_4">
+            <div class="box">
+                <h2>PROJECTS</h2>
+                <div class="projectsBox">
+                    <div class="owl-carousel owl-theme">
+                        <div class="pItems">
+                            <a href="index.html"><img src="assets/img/projects/redrust.png" alt="worksThumbnail"></a>
+                        </div>
+                        <div class="pItems">
+                            <a href="index.html"><img src="assets/img/projects/nejimakialice.png" alt="worksThumbnail"></a>
+                        </div>
+                        <div class="pItems">
+                            <a href="index.html"><img src="assets/img/projects/5apple.png" alt="worksThumbnail"></a>
+                        </div>
+                        <div class="pItems">
+                            <a href="index.html"><img src="assets/img/projects/rharizuri.png" alt="worksThumbnail"></a>
+                        </div>
+                        <div class="pItems">
+                            <a href="index.html"><img src="assets/img/projects/scientist.png" alt="worksThumbnail"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <img src="assets/svg/nextbutton.svg" class="button nextButton">
-            <img src="assets/svg/nextbutton.svg" class="button backButton">
+            <img src="assets/svg/nextbutton.svg" class="navButton nextButton">
+            <img src="assets/svg/nextbutton.svg" class="navButton backButton">
             <!--=======================ABOUTME=======================-->
             <div class="aboutmeBox box">
-                <h2 class="text">ABOUT ME</h2>
+                <h2>ABOUT ME</h2>
                 <div class="aTextBox">
-                    <h3 class="text">YUYA MATOBA</h3>
-                    <p class="text">平成９年生まれ。<br>
-                    朝から晩まで創作とゲームに明け暮れる<br>
-                    京都造形芸術大学生。<br>
-                    大学生から3DCGを学び、現在に至ります。 </p>
+                    <h3>YUYA MATOBA</h3>
+                    <p>平成９年生まれ。<br> 朝から晩まで創作とゲームに明け暮れる
+                        <br> 京都造形芸術大学生。
+                        <br> 大学生から3DCGを学び、現在に至ります。 </p>
                 </div>
-            </div>
-        </main>
-        <!--=======================TYPE=======================-->
-        <div class="amBox">
+                <div class="amBox">
             <img src="assets/img/ty01.png">
             <img src="assets/img/ty02.png" class="amBoxLayer">
         </div>
+            </div>
+        </main>
         <!--=======================FOOTER=======================-->
         <footer>
-            <small class="text">&copy; 2018 YUYA MATOBA</small>
+            <small>&copy; 2018 YUYA MATOBA</small>
         </footer>
     </div>
 </body>
+
 </html>
