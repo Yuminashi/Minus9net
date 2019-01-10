@@ -40,7 +40,6 @@ small {
     font-size: 12px;
     letter-spacing: 5px;
 }
-
 /*----------ANIMATION----------*/
 
 @keyframes UleftToCenter {
@@ -51,12 +50,11 @@ small {
         clip-path: polygon(100% 0, 100% 0, 100% 700px, 0 100%, 0 700px);
     }
 }
-
 @keyframes BleftToCenter {
     15% {
         clip-path: polygon(0 100%, 0% 100%, 0 100%);
     }
-    100% {
+    100%{
         clip-path: polygon(0 0, 0% 100%, 100% 100%);
     }
 }
@@ -158,24 +156,6 @@ small {
     clip-path: polygon(0 0, 100% 0, 100% 700px, 0 700px);
 }
 
-.keyImage h1 {
-    position: absolute;
-    color: white;
-    left: 310px;
-    top: 200px;
-    font-size: 50px;
-    letter-spacing: 15px;
-    text-align: right;
-    line-height: 50px;
-}
-.titleLogo_9{
-    margin-left: 10px;
-    font-size: 120px;
-}
-.titleLogo_net{
-    font-size: 30px;
-}
-
 
 .backImage {
     animation-duration: 1.5s;
@@ -198,7 +178,7 @@ small {
     position: relative;
     width: 100%;
     height: auto;
-    top: 650px;
+    top: 620px;
 }
 
 main {
@@ -221,6 +201,32 @@ main {
     top: -50px;
     height: 0;
     color: white;
+}
+.titleLogo{
+    position: absolute;
+    top: -450px;
+}
+.titleLogo h1 {
+    color: white;
+    font-size: 50px;
+    letter-spacing: 15px;
+    text-align: right;
+    line-height: 50px;
+}
+.titleLogo_9{
+    margin-left: 10px;
+    font-size: 120px;
+}
+.titleLogo_net{
+    font-size: 30px;
+}
+.titleLogo p{
+    margin-top: 40px;
+    margin-right: 40px;
+    font-size: 20px;
+    letter-spacing: 8px;
+    color: white;
+    text-align: right;
 }
 
 /*----------WORL----------*/
@@ -276,7 +282,9 @@ main {
     position: absolute;
     left: 0;
     bottom: 0;
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    animation-duration: 1.5s;
+    animation-name: BleftToCenter;
+    animation-fill-mode: forwards;
 }
 
 .amBox img {
@@ -298,4 +306,25 @@ footer {
     height: 35px;
     color: white;
     text-align: center;
+}
+
+
+@media screen and (min-width:1810px){
+    .keyImage{
+        clip-path: polygon(0 0, 100% 0, 100% 1000px, 0 1000px);
+    }
+    .content{
+            top: 920px;
+    }
+    .titleLogo{
+        top: -550px;
+    }
+    @keyframes UleftToCenter {
+        15% {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+        }
+        100% {
+            clip-path: polygon(100% 0, 100% 0, 100% 1000px, 0 100%, 0 1000px);
+        }
+    }
 }
