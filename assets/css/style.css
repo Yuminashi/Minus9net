@@ -311,13 +311,17 @@ footer {
 
 @media screen and (min-width:1810px){
     .keyImage{
+        transition-duration: 1s;
         clip-path: polygon(0 0, 100% 0, 100% 1000px, 0 1000px);
     }
     .content{
-            top: 920px;
+        transition-duration: 1s;
+        top: 920px;
     }
     .titleLogo{
+        transition-duration: 1s;
         top: -550px;
+        right: 760px;
     }
     @keyframes UleftToCenter {
         15% {
