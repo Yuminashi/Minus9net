@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*----------NAV----------*/
+
+
+    .headerBox {
+        clip-path: polygon(100% 0, 100% 100%, 180px 100%, 130px 75%, 80px 100%, 0 100%, 0 0);
+        position: absolute;
+        width: 100%;
+        background: black;
+        transition-property: all;
+        transition-duration: 0.25s;
+
+    }
+
+    .headerBox h1 {
+        display: inline-block;
+
+        color: white;
+        width: 100px;
+    }
+
+    .headerBox ul {
+        list-style-type: none;
+        text-align: right;
+
+    }
+
+    .headerBox a {
+        text-decoration: none;
+    }
+
+    .headerBox div {
+        display: inline-block;
+        border-left: solid 1px white;
+    }
+
+    .headerBox li {
+
+        display: inline-block;
+        width: auto;
+        height: 100%;
+        left: 10px;
+        padding-bottom: 10px;
+
+    }
+
+    .headerBox p {
+        display: flex;
+        margin-left: 80px;
+        align-items: center;
+        color: white;
+        width: auto;
+        font-size: 12px;
+        letter-spacing: 10px;
+        padding-left: 8px;
+
+    }
+
+</style>
+
+<body>
+    <header class="headerBox">
+        <h1>title</h1>
+        <ul>
+            <a href="index.html">
+                <li class="navButton01">
+                    <p>HOME</p>
+                </li>
+            </a>
+            <div class="navLine"></div>
+            <a href="works.html">
+                <li class="navButton02">
+                    <p>WORKS</p>
+                </li>
+            </a>
+            <div class="navLine"></div>
+            <a href="index.html">
+                <li class="navButton03">
+                    <p>ABOUT</p>
+                </li>
+            </a>
+            <div class="navLine"></div>
+            <a href="index.html">
+                <li class="navButton04">
+                    <p>CONTACT</p>
+                </li>
+            </a>
+        </ul>
+    </header>
+</body>
+
+</html>

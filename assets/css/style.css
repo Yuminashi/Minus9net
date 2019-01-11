@@ -47,7 +47,7 @@ small {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
     }
     100% {
-        clip-path: polygon(100% 0, 100% 0, 100% 700px, 0 100%, 0 700px);
+        clip-path: polygon(100% 0, 100% 0, 100% 650px, 0 100%, 0 650px);
     }
 }
 @keyframes BleftToCenter {
@@ -73,7 +73,7 @@ small {
     background: black;
     display: flex;
     height: 50px;
-    padding-bottom: 10px;
+
     z-index: 1;
     transition-property: all;
     transition-duration: 0.25s;
@@ -118,7 +118,6 @@ small {
     width: auto;
     height: 100%;
     left: 10px;
-    padding-top: 10px;
     padding-bottom: 10px;
 }
 
@@ -128,7 +127,7 @@ small {
     align-items: center;
     color: white;
     width: auto;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 10px;
     padding-left: 8px;
 }
@@ -153,7 +152,7 @@ small {
     width: 100%;
     top: 40px;
     right: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 700px, 0 700px);
+    clip-path: polygon(0 0, 100% 0, 100% 650px, 0 650px);
 }
 
 
@@ -178,7 +177,7 @@ small {
     position: relative;
     width: 100%;
     height: auto;
-    top: 620px;
+    top: 570px;
 }
 
 main {
@@ -208,17 +207,17 @@ main {
 }
 .titleLogo h1 {
     color: white;
-    font-size: 50px;
-    letter-spacing: 15px;
+    font-size: 40px;
+    letter-spacing: 10px;
     text-align: right;
-    line-height: 50px;
+    line-height: 40px;
 }
 .titleLogo_9{
-    margin-left: 10px;
-    font-size: 120px;
+    margin-left: 8px;
+    font-size: 110px;
 }
 .titleLogo_net{
-    font-size: 30px;
+    font-size: 15px;
 }
 .titleLogo p{
     margin-top: 40px;
@@ -231,27 +230,24 @@ main {
 
 /*----------WORL----------*/
 
-.projectsBox {
+.flexSlideBox {
     padding-top: 30px;
     padding-bottom: 10px;
     padding-right: 40px;
     padding-left: 40px;
 }
 
-.pItems {
+.slideItems {
     width: 98%;
 }
 
-.navButton {
+.slideButton {
     position: absolute;
     width: 8%;
     height: 13%;
     margin: 0;
     padding: 0;
     top: 63px;
-}
-
-.nextButton {
     right: -40px;
 }
 
@@ -308,6 +304,7 @@ footer {
     text-align: center;
 }
 
+/*----------RESPONSIVE----------*/
 
 @media screen and (min-width:1810px){
     .keyImage{
