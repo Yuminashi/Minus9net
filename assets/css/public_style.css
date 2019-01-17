@@ -136,7 +136,7 @@ body {
 }
 
 .back_keyimage_layer {
-    height: 80vh;
+    max-height: 750px;
     object-fit: cover;
     font-family: 'object-fit: cover;';
     position: absolute;
