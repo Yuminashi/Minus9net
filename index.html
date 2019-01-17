@@ -1,170 +1,131 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/public_style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/home_style.css">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
-    <!--=======================NAVSC=======================-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-    <script type="text/javascript">
-        $(function() {
-            $('.navButton01').hover(function() {
-                $('.headerBox').toggleClass("navHover01");
-            });
-        });
-        $(function() {
-            $('.navButton02').hover(function() {
-                $('.headerBox').toggleClass("navHover02");
-            });
-        });
-        $(function() {
-            $('.navButton03').hover(function() {
-                $('.headerBox').toggleClass("navHover03");
-            });
-        });
-        $(function() {
-            $('.navButton04').hover(function() {
-                $('.headerBox').toggleClass("navHover04");
-            });
-        });
-    </script>
-    <!--=======================FLEXSLIDESC=======================-->
-    <link rel="stylesheet" href="assets/plugin/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/plugin/assets/owl.theme.default.min.css">
-    <script src="assets/plugin/owl.carousel.js"></script>
-    <script src="assets/plugin/jquery.mousewheel.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
-                loop: true,
-                nav: false,
-                margin: 0,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    250: {
-                        items: 2
-                    },
-                    500: {
-                        items: 3
-                    },
-                    750: {
-                        items: 4
-                    }
-                }
-            });
-            var owl = $('.owl-carousel');
-            owl.owlCarousel();
-            $('.nextButton').click(function() {
-                owl.trigger('next.owl.carousel');
-            })
-            $('.backButton').click(function() {
-                owl.trigger('prev.owl.carousel', [300]);
-            })
-        })
-    </script>
 </head>
-
 <body>
-    <!--=======================HEADER=======================-->
-    <header class="headerBox">
-        <nav class="navLinkBox">
-            <ul>
-                <a href="index.html">
-                    <li class="navButton01">
-                        <p>HOME</p>
-                        <div class="navLine"></div>
-                    </li>
+    <header class="header">
+        <h1 class="header_logo">MINUS<span class="header_logo_9">9</span><span class="header_logo_net">.NET</span></h1>
+        <ul class="header_ul">
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_1" href="index.html">
+                    <p class="header_ul_li_hlink_text">HOME</p>
                 </a>
-                <a href="works.html">
-                    <li class="navButton02">
-                        <p>WORKS</p>
-                        <div class="navLine"></div>
-                    </li>
+            </li>
+            <li class="header_ul header_line"></li>
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_2" href="works.html">
+                    <p class="header_ul_li_hlink_text">PROJECTS</p>
                 </a>
-                <a href="index.html">
-                    <li class="navButton03">
-                        <p>ABOUT</p>
-                        <div class="navLine"></div>
-                    </li>
+            </li>
+            <li class="header_ul header_line"></li>
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_3" href="index.html">
+                    <p class="header_ul_li_hlink_text">ABOUT</p>
                 </a>
-                <a href="index.html">
-                    <li class="navButton04">
-                        <p>CONTACT</p>
-                        <div class="navLine"></div>
-                    </li>
+            </li>
+            <li class="header_ul header_line"></li>
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_4" href="index.html">
+                    <p class="header_ul_li_hlink_text">CONTACT</p>
                 </a>
-            </ul>
-        </nav>
-        <img src="assets/svg/Twitter_Logo_WhiteOnImage.svg" alt="TwitterIcon" width="50px" height="50px">
-        <img src="assets/svg/skechfab-logo-black.svg" alt="skechfabIcon" width="50px" height="50px">
+            </li>
+        </ul>
+        <img class="header_pointer" src="assets/svg/navPointer.svg">
     </header>
-    <!--=======================KEYIMAGE=======================-->
-    <div class="keyImage">
-        <div class="keyLayer">
-            <img src="assets/img/003.png" alt="wireImage">
-            <img src="assets/img/002.png" alt="backImage" class="backImage">
-            <img src="assets/img/001.png" alt="charaImage">
+    <div class="back">
+        <div class="back_titlelogo">
+            <h1 class="back_titlelogo_text">MINUS<span class="back_titlelogo_9">9</span><br>
+                <span class="back_titlelogo_net">.NET</span></h1>
+            <p>
+                This website is<br>Yuya Matoba`s<br>portfolio.
+            </p>
+        </div>
+        <div class="back_keyimage">
+            <img class="back_keyimage_layer back_keyimage_last" src="assets/img/003.png" alt="wireImage">
+            <img class="back_keyimage_layer back_keyimage_bg" src="assets/img/002.png" alt="backImage">
+            <img class="back_keyimage_layer" src="assets/img/001.png" alt="charaImage">
         </div>
     </div>
-    <!--=======================CONTENT=======================-->
-    <div class="content">
-        <main>
-            <div class="titleLogo">
-                <h1>MINUS<span class="titleLogo_9">9</span><br><span class="titleLogo_net">.NET</span></h1>
-                <p>
-                This website is<br>Yuya Matoba`s<br>portfolio.
+    <div class="contents">
+        <div class="contents_projects box">
+            <h2 class="contents_projects_title">PROJECTS</h2>
+            <ul class="contents_projects_ul">
+                <li class="contents_projects_ul_li">
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/redrust.png" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/nejimakialice.png" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/5apple.png" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/rharizuri.png" alt="slideItems"></a>
+                    </div>
+                </li>
+                <li class="contents_projects_ul_li">
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/scientist.png" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/rclock.png" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/boutenkan.png" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_projects_ul_li_items">
+                        <a href="index.html"><img src="assets/img/projects/hayabusa.png" alt="slideItems"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="contents_about box">
+            <h2 class="contents_about_title">ABOUT</h2>
+            <div class="contents_about_textbox">
+                <h3 class="contents_about_textbox_namem">的場 悠矢</h3>
+                <h4 class="contents_about_textbox_names">YUYA MATOBA</h4>
+                <p class="contents_about_textbox_text">
+                    MINUS9.netはポートフォリオサイトであり、<br>
+                    その制作、管理者。<br>
+                    京都造形芸術大学生、平成９年生まれ。<br>
+                    朝から晩まで創作とサブカルチャーに明け暮れる。<br>
+                    大学生から3DCGを学び、現在に至る。
                 </p>
             </div>
-            <div class="box">
-                <h2>PROJECTS</h2>
-                <div class="flexSlideBox">
-                    <div class="owl-carousel owl-theme">
-                        <div class="slideItems">
-                            <a href="index.html"><img src="assets/img/projects/redrust.png" alt="slideItems"></a>
-                        </div>
-                        <div class="slideItems">
-                            <a href="index.html"><img src="assets/img/projects/nejimakialice.png" alt="slideItems"></a>
-                        </div>
-                        <div class="slideItems">
-                            <a href="index.html"><img src="assets/img/projects/5apple.png" alt="slideItems"></a>
-                        </div>
-                        <div class="slideItems">
-                            <a href="index.html"><img src="assets/img/projects/rharizuri.png" alt="slideItems"></a>
-                        </div>
-                        <div class="slideItems">
-                            <a href="index.html"><img src="assets/img/projects/scientist.png" alt="slideItems"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="assets/svg/nextbutton.svg" class="slideButton nextButton">
-            <img src="assets/svg/nextbutton.svg" class="slideButton backButton">
-            <!--=======================ABOUTME=======================-->
-            <div class="aboutmeBox box">
-                <h2>ABOUT ME</h2>
-                <div class="aTextBox">
-                    <h3>YUYA MATOBA</h3>
-                    <p>平成９年生まれ。<br> 朝から晩まで創作とゲームに明け暮れる
-                        <br> 京都造形芸術大学生。
-                        <br> 大学生から3DCGを学び、現在に至ります。 </p>
-                </div>
-                <div class="amBox">
-            <img src="assets/img/ty01.png">
-            <img src="assets/img/ty02.png" class="amBoxLayer">
         </div>
-            </div>
-        </main>
-        <!--=======================FOOTER=======================-->
-        <footer>
-            <small>&copy; 2018 YUYA MATOBA</small>
-        </footer>
     </div>
+    <footer class="footer">
+        <div class="back2">
+           <img class="back2_layer" src="assets/img/ty02.png">
+            <img class="back2_layer back2_layer_back" src="assets/img/ty01.png">
+        </div>
+        <small>&copy; 2018 YUYA MATOBA</small>
+    </footer>
+    <!--HeaderScript-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#header_button_1').hover(function() {
+                $('.header_pointer').toggleClass("navHover01");
+            });
+            $('#header_button_2').hover(function() {
+                $('.header_pointer').toggleClass("navHover02");
+            });
+            $('#header_button_3').hover(function() {
+                $('.header_pointer').toggleClass("navHover03");
+            });
+            $('#header_button_4').hover(function() {
+                $('.header_pointer').toggleClass("navHover04");
+            });
+        });
+        objectFitImages('.back_keyimage_layer');
+    </script>
 </body>
 
 </html>
