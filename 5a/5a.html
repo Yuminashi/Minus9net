@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Kemomimi5</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/新しいフォルダー (2).json", {
+            onProgress: UnityProgress
+        });
+    </script>
+</head>
+
+<body>
+    <div class="webgl-content">
+        <div id="gameContainer" style="width: 960px; height: 600px"></div>
+        <table>
+            <tr>
+                <th>W</th>
+                <td>前進</td>
+            </tr>
+            <tr>
+                <th>A</th>
+                <td>左ステップ</td>
+            </tr>
+            <tr>
+                <th>S</th>
+                <td>後退</td>
+            </tr>
+            <tr>
+                <th>D</th>
+                <td>右ステップ</td>
+            </tr>
+            <tr>
+                <th>SHIFT</th>
+                <td>変身</td>
+            </tr>
+            <tr>
+                <th>ESC</th>
+                <td>終了</td>
+            </tr>
+        </table>
+        <div class="footer">
+            <div class="webgl-logo"></div>
+            <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

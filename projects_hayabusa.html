@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/public_style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/projects_clock_style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header_logo">MINUS<span class="header_logo_9">9</span><span class="header_logo_net">.NET</span></h1>
+        <ul class="header_ul">
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_1" href="index.html">
+                    <p class="header_ul_li_hlink_text">HOME</p>
+                </a>
+            </li>
+            <li class="header_ul header_line"></li>
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_2" href="index.html#projects">
+                    <p class="header_ul_li_hlink_text">PROJECTS</p>
+                </a>
+            </li>
+            <li class="header_ul header_line"></li>
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_3" href="index.html#about">
+                    <p class="header_ul_li_hlink_text">ABOUT</p>
+                </a>
+            </li>
+            <!--
+            <li class="header_ul header_line"></li>
+            <li class="header_ul_li">
+                <a class="header_ul_li_hlink" id="header_button_4" href="index.html">
+                    <p class="header_ul_li_hlink_text">CONTACT</p>
+                </a>
+            </li>
+            -->
+        </ul>
+        <img class="header_pointer" src="assets/svg/navPointer.svg">
+    </header>
+    <div class="back">
+        <div class="back_titlelogo">
+            <h1 class="back_titlelogo_text">隼</h1>
+            <p>
+                リアルライティングな<br>３Dモデル
+            </p>
+        </div>
+        <div class="back_keyimage">
+            <img class="back_keyimage_layer back_keyimage_last" src="assets/img/h_003.png" alt="wireImage">
+            <img class="back_keyimage_layer back_keyimage_bg" src="assets/img/h_002.png" alt="backImage">
+        </div>
+    </div>
+    <div class="contents">
+
+        <div class="contents_thumbnail box">
+            <h2 class="contents_thumbnail_title">SCREEN SHOTS</h2>
+            <ul class="contents_thumbnail_ul">
+                <li class="contents_thumbnail_ul_li">
+                    <div class="contents_thumbnail_ul_li_items">
+                        <a><img src="assets/img/hayavusa/items001.jpg" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_thumbnail_ul_li_items">
+                        <a><img src="assets/img/hayavusa/items002.jpg" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_thumbnail_ul_li_items">
+                        <a><img src="assets/img/hayavusa/items003.jpg" alt="slideItems"></a>
+                    </div>
+                </li>
+                <li class="contents_thumbnail_ul_li">
+                    <div class="contents_thumbnail_ul_li_items">
+                        <a><img src="assets/img/hayavusa/items004.jpg" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_thumbnail_ul_li_items">
+                        <a><img src="assets/img/hayavusa/items005.jpg" alt="slideItems"></a>
+                    </div>
+                    <div class="contents_thumbnail_ul_li_items">
+                        <a><img src="assets/img/hayavusa/items006.jpg" alt="slideItems"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contents_detail box">
+            <h2 class="contents_detail_title">PROJECT DETAIL</h2>
+            <div class="contents_detail_box">
+                <p class="contents_detail_box_text">
+                    リアルライティングのモデル。<br>
+                    スズキの隼を参考にモデリングしたもの。
+                </p>
+                <div>
+                    <table class="contents_detail_table">
+                        <tr>
+                            <th>ポリゴン</th>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <th>テクスチャ</th>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>製作期間</th>
+                            <td>3時間</td>
+                        </tr>
+                        <tr>
+                            <th>主要ツール</th>
+                            <td>3DSMAX</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <small>&copy; 2018 YUYA MATOBA</small>
+    </footer>
+    <!--HeaderScript-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/plugin/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugin/assets/owl.theme.default.min.css">
+    <script src="assets/plugin/owl.carousel.js"></script>
+    <script src="assets/plugin/jquery.mousewheel.min.js"></script>
+    <script src="assets/plugin/ofi.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                loop: false,
+                nav: false,
+                margin: 0,
+                items: 1
+            });
+            owl.on('mousewheel', '.owl-stage', function(e) {
+                if (e.deltaY < 0) {
+                    owl.trigger('next.owl');
+                } else {
+                    owl.trigger('prev.owl');
+                }
+                e.preventDefault();
+            });
+            $('#header_button_1').hover(function() {
+                $('.header_pointer').toggleClass("navHover01");
+            });
+            $('#header_button_2').hover(function() {
+                $('.header_pointer').toggleClass("navHover02");
+            });
+            $('#header_button_3').hover(function() {
+                $('.header_pointer').toggleClass("navHover03");
+            });
+            $('#header_button_4').hover(function() {
+                $('.header_pointer').toggleClass("navHover04");
+            });
+        });
+        objectFitImages('.back_keyimage_layer');
+
+    </script>
+</body>
+
+</html>

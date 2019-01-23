@@ -80,32 +80,6 @@ body {
     transform: translate(0, -50%);
 }
 
-.header_pointer {
-    position: absolute;
-    height: 100%;
-    width: auto;
-    left: 280px;
-    top: 0;
-    transition-duration: 0.25s;
-    z-index: 2;
-}
-
-.header_pointer.navHover01 {
-    left: 280px;
-}
-
-.header_pointer.navHover02 {
-    left: 445px;
-}
-
-.header_pointer.navHover03 {
-    left: 610px;
-}
-
-.header_pointer.navHover04 {
-    left: 770px;
-}
-
 @keyframes UleftToCenter {
     15% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
