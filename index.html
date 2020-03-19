@@ -1,132 +1,342 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/public_style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/home_style.css">
+
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
+
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: "M PLUS Rounded 1c";
+            color: rgb(70, 70, 70);
+            letter-spacing: 5px;
+        }
+
+        .key {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .key_chara {
+            background-image: url(assets/img/key_chara.png);
+            z-index: -11;
+        }
+
+
+        .key_color {
+            background-image: url(assets/img/key_color.jpg);
+            z-index: -12;
+            clip-path: polygon(100% 100%, 100% 0, 0 0, 0 0, 0 100%);
+        }
+
+        .key_wire_loaded {
+            transition: 1s;
+            clip-path: polygon(100% 100%, 100% 0, 100% 0, 0 100%, 0 100%);
+        }
+
+        .key_wire {
+            background-image: url(assets/img/key_wire.jpg);
+            z-index: -13;
+        }
+
+        .key_blur {
+            background: inherit;
+            filter: blur(0px);
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            z-index: -10;
+        }
+
+        .elements {
+            background-color: rgb(255, 255, 255, 0.65);
+        }
+
+        header {
+            --header-height: 36px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            max-height: auto;
+            display: flex;
+            height: var(--header-height);
+        }
+
+        header>.logo {
+            height: auto;
+            width: var(--header-height);
+            padding: 3px;
+        }
+
+        nav {
+            flex: 1;
+            width: 100%;
+            height: auto;
+        }
+
+        nav>ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        nav>ul>li {
+            margin: 0 4vw;
+            height: 100%;
+        }
+
+        nav>ul>li>a {
+            margin: auto;
+            text-decoration: none;
+            font-weight: 1000;
+            font-size: 13.5px;
+            line-height: var(--header-height);
+        }
+
+        main {
+            margin: 0 auto;
+            width: 90vw;
+        }
+
+        main>.title {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .works {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            border-radius: 10px;
+        }
+
+        .works>ul {
+            width: 80vw;
+            margin: auto;
+            padding: 20px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .works>ul>li {
+            width: 200px;
+            margin: 15px;
+        }
+
+        .work {
+            height: 200px;
+        }
+
+        .work>a{
+            text-decoration: none;
+        }
+
+        .work_img {
+            width: 100%;
+            height: 86%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: solid 1px rgb(70, 70, 70);
+        }
+
+        .work_img>img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .work_text {
+            height: 14%;
+            width: 100%;
+            font-size: 12.5px;
+            line-height: 250%;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 18px;
+            text-align: center;
+            width: 80vw;
+            margin: auto;
+            height: 60px;
+            line-height: 60px;
+            letter-spacing: 10px;
+            border-bottom: solid 1px rgb(70, 70, 70);
+        }
+    </style>
 </head>
-<body>
-    <header class="header">
-        <h1 class="header_logo">MINUS<span class="header_logo_9">9</span><span class="header_logo_net">.NET</span></h1>
-        <ul class="header_ul">
-            <li class="header_ul_li">
-                <a class="header_ul_li_hlink" id="header_button_1" href="index.html">
-                    <p class="header_ul_li_hlink_text">HOME</p>
-                </a>
-            </li>
-            <li class="header_ul header_line"></li>
-            <li class="header_ul_li">
-                <a class="header_ul_li_hlink" id="header_button_2" href="index.html#projects">
-                    <p class="header_ul_li_hlink_text">PROJECTS</p>
-                </a>
-            </li>
-            <li class="header_ul header_line"></li>
-            <li class="header_ul_li">
-                <a class="header_ul_li_hlink" id="header_button_3" href="index.html#about">
-                    <p class="header_ul_li_hlink_text">ABOUT</p>
-                </a>
-            </li>
-            <!--
-            <li class="header_ul header_line"></li>
-            <li class="header_ul_li">
-                <a class="header_ul_li_hlink" id="header_button_4" href="index.html">
-                    <p class="header_ul_li_hlink_text">CONTACT</p>
-                </a>
-            </li>
-            -->
-        </ul>
-        <img class="header_pointer" src="assets/svg/navPointer.svg">
-    </header>
-    <div class="back">
-        <div class="back_titlelogo">
-            <h1 class="back_titlelogo_text">MINUS<span class="back_titlelogo_9">9</span><br>
-                <span class="back_titlelogo_net">.NET</span></h1>
-            <p>
-                This website is<br>Yuya Matoba`s<br>portfolio.
-            </p>
-        </div>
-        <div class="back_keyimage">
-            <img class="back_keyimage_layer back_keyimage_last" src="assets/img/003.png" alt="wireImage">
-            <img class="back_keyimage_layer back_keyimage_bg" src="assets/img/002.png" alt="backImage">
-            <img class="back_keyimage_layer" src="assets/img/001.png" alt="charaImage">
-        </div>
+
+<body class="home">
+    <div class="key key_chara"></div>
+    <div class="key key_color">
+        <div class="key_blur"></div>
     </div>
-    <div class="contents">
-        <div class="contents_projects box"  id="projects">
-            <h2 class="contents_projects_title">PROJECTS</h2>
-            <ul class="contents_projects_ul">
-                <li class="contents_projects_ul_li">
-                    <div class="contents_projects_ul_li_items">
-                        <a href="index.html"><img src="assets/img/projects/redrust.png" alt="slideItems"></a>
-                    </div>
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_cwa.html"><img src="assets/img/projects/nejimakialice.png" alt="slideItems"></a>
-                    </div>
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_5a.html"><img src="assets/img/projects/5apple.png" alt="slideItems"></a>
-                    </div>
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_harizuri.html"><img src="assets/img/projects/rharizuri.png" alt="slideItems"></a>
-                    </div>
+    <div class="key key_wire">
+        <div class="key_blur"></div>
+    </div>
+
+    <header class="elements">
+        <img class="logo" src="assets/img/nav_logo.svg">
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#works">WORKS</a></li>
+                <li><a href="index.html">ABOUT</a></li>
+                <li><a href="index.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="title"></div>
+        <div class="elements works" id="works">
+            <h1>WORKS</h1>
+            <ul>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_aliciaDiary.jpg"></div>
+                        <div class="work_text">AliciaDiary</div>
+                    </a>
                 </li>
-                <li class="contents_projects_ul_li">
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_scientist.html"><img src="assets/img/projects/scientist.png" alt="slideItems"></a>
-                    </div>
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_clock.html"><img src="assets/img/projects/rclock.png" alt="slideItems"></a>
-                    </div>
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_boutenkan.html"><img src="assets/img/projects/boutenkan.png" alt="slideItems"></a>
-                    </div>
-                    <div class="contents_projects_ul_li_items">
-                        <a href="projects_hayabusa.html"><img src="assets/img/projects/hayabusa.png" alt="slideItems"></a>
-                    </div>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_redRust.jpg"></div>
+                        <div class="work_text">RedRust</div>
+                    </a>
                 </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_cwa.jpg"></div>
+                        <div class="work_text">ねじまきアリス</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_5apple.jpg"></div>
+                        <div class="work_text">林檎を5つ集めるゲーム</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_foxgirl.jpg"></div>
+                        <div class="work_text">狐の子</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_scientist.jpg"></div>
+                        <div class="work_text">Scientist</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_clock.jpg"></div>
+                        <div class="work_text">懐中時計</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_hayabusa.jpg"></div>
+                        <div class="work_text">隼</div>
+                    </a>
+                </li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
-        <div class="contents_about box" id="about">
-            <h2 class="contents_about_title">ABOUT</h2>
-            <div class="contents_about_textbox">
-                <h3 class="contents_about_textbox_namem">的場 悠矢</h3>
-                <h4 class="contents_about_textbox_names">YUYA MATOBA</h4>
-                <p class="contents_about_textbox_text">
-                    MINUS9.netはポートフォリオサイトであり、<br>
-                    その制作、管理者。<br>
-                    京都造形芸術大学生、平成９年生まれ。<br>
-                    朝から晩まで創作とサブカルチャーに明け暮れる。<br>
-                    大学生から3DCGを学び、現在に至る。
-                </p>
-            </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="back2">
-           <img class="back2_layer" src="assets/img/ty02.png">
-            <img class="back2_layer back2_layer_back" src="assets/img/ty01.png">
-        </div>
-        <small>&copy; 2018 YUYA MATOBA</small>
-    </footer>
-    <!--HeaderScript-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#header_button_1').hover(function() {
-                $('.header_pointer').toggleClass("navHover01");
+        $(function KeyImageActions() { //キーイメージに関するアクション
+
+            var isExitLoadAnim = false;
+
+            window.onload = function () {
+                $(".key_color").toggleClass('key_wire_loaded');
+            };
+
+            document.querySelector('.key_color').addEventListener("transitionend", function () {
+                isExitLoadAnim = true;
             });
-            $('#header_button_2').hover(function() {
-                $('.header_pointer').toggleClass("navHover02");
+
+            $(window).resize(function () {
+                ScrollAction();
             });
-            $('#header_button_3').hover(function() {
-                $('.header_pointer').toggleClass("navHover03");
+
+            $(window).scroll(function TitleAction() {
+
+                ScrollAction();
             });
-            $('#header_button_4').hover(function() {
-                $('.header_pointer').toggleClass("navHover04");
-            });
+
+            function ScrollAction() {
+                if (!isExitLoadAnim) {
+                    $(window).scrollTop(0);
+                    return;
+                }
+
+                $(".key_wire_loaded").css("transition", "0s");
+
+                var s = $(window).scrollTop();
+                s /= $('.works').offset().top;
+                s *= 100;
+                if (s > 99.99) s = 100;
+
+                if (!isFinite(s)) return;
+
+                $(".key_blur").css("filter", "blur(" + s / 100 * 4 + "px)");
+
+                var v = 100 - s;
+
+                $(".key_color").css("clip-path", "polygon(100% 100%, 100% 0, 100% " + s + "%, " + s + "% 100%, 0 100%)");
+
+                $(".key_chara").css("clip-path", "polygon(0 0, 100% 0, 100% " + v + "%, 0 " + v + "%)");
+            };
         });
-        objectFitImages('.back_keyimage_layer');
+
+        $(function() {
+        
+        $('a[href^="#"]').click(function() { // #で始まるリンクをクリックしたら実行されます
+          // スクロールの速度
+          var speed = 400; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+
     </script>
 </body>
 
