@@ -15,34 +15,62 @@
         }
 
         body {
-            height: 200vh;
+            min-height: 200vh;
         }
 
-        .multi-bg-example {
+        .key {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+        }
+
+        .key>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #key_color{
+            clip-path: polygon(100% 100%, 100% 0, 100% 0, 0 100%, 0 100%);
+        }
+
+        header>.content{
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            position: relative;
+        }
+
+        main{
 
             width: 100%;
             height: 100vh;
-
-            background-image:
-                url(assets/img/key_chara.png),
-                url(assets/img/key_color.jpg),
-                url(assets/img/wire.jpg);
-
-            background-position: top;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-
-            background-clip: border-box;
-
-            clip-path: polygon(100% 100%, 100% 0, 100% 0, 0 100%, 0 100%);
-            
+            z-index: 1;
+            position: relative;
+            background-color: rosybrown;
         }
+
     </style>
 </head>
 
 <body>
-    <div class="multi-bg-example"></div>
+    <header>
+        <div class="key">
+            <img id="key_wire" src="assets/img/key_wire.jpg">
+            <img id="key_color" src="assets/img/key_color.jpg">
+            <img id="key_chara" src="assets/img/key_chara.png">
+        </div>
+        <div class="content">
+
+        </div>
+    </header>
+    <main>
+
+    </main>
 
 
 
