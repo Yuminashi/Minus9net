@@ -4,8 +4,6 @@
 <head>
     <title>Yuminashi Outlet</title>
     <meta charset="UTF-8">
-    <meta name="description" content="主に 3DCG、ゲーム を作るゆみなしのポートフォリオサイトです。">
-    <meta name="keywords" content="Yuminashi,ゆみなし,3DCG,3Dキャラ">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300|M+PLUS+Rounded+1c:100,300" rel="stylesheet">
 
     <style type="text/css">
@@ -34,18 +32,27 @@
             left: 0;
         }
 
-        #key_color{
-            clip-path: polygon(100% 100%, 100% 0, 100% 0, 0 100%, 0 100%);
-        }
-
-        header>.content{
+        header>.content {
             width: 100%;
             height: 100vh;
             z-index: 1;
             position: relative;
         }
 
-        main{
+        .key_color {
+            transition: 1s;
+            clip-path: polygon(100% 100%, 100% 0, 0 0, 0 0, 0 100%);
+        }
+
+        .key_color_enter {
+            clip-path: polygon(100% 100%, 100% 0, 100% 0, 0 100%, 0 100%);
+        }
+
+        .key_color_exit {
+            clip-path: polygon(100% 100%, 100% 0, 100% 100%, 100% 100%, 0 100%);
+        }
+
+        main {
 
             width: 100%;
             height: 100vh;
@@ -53,7 +60,6 @@
             position: relative;
             background-color: rosybrown;
         }
-
     </style>
 </head>
 
@@ -61,7 +67,7 @@
     <header>
         <div class="key">
             <img id="key_wire" src="assets/img/key_wire.jpg">
-            <img id="key_color" src="assets/img/key_color.jpg">
+            <img id="key_color" class="key_color" src="assets/img/key_color.jpg">
             <img id="key_chara" src="assets/img/key_chara.png">
         </div>
         <div class="content">
@@ -76,75 +82,32 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(function KeyImageActions() { //キーイメージに関するアクション
 
-            var isExitLoadAnim = false;
+        var keyAnimStatus = {
+            start: 1,
+            endEnter: 2,
+            endExit: 3,
+        }
 
-            window.onload = function () {
-                $(".key_color").addClass('key_color_enter');
-            };
+        var keyAnim = keyAnimStatus.start;
 
-            document.querySelector('.key_color').addEventListener("transitionend", function () {
-                isExitLoadAnim = true;
-            });
+        var keyColor = $("#key_color");
 
-            $(window).resize(function () {
-                ScrollAction();
-            });
+        window.onload = function () {
+            keyColor.addClass('key_color_enter');
+        };
 
-            $(window).scroll(function TitleAction() {
-
-                ScrollAction();
-            });
-
-            function ScrollAction() {
-
-                if (!isExitLoadAnim) {
-                    $(window).scrollTop(0);
-                    return;
-                }
-
-                var s = $(window).scrollTop();
-                s /= $('.works').offset().top;
-                s *= 100;
-                if (s > 99.99) s = 100;
-
-                if (!isFinite(s)) return;
-
-                if (s <= 0) {
-                    $(".key_color").removeClass('key_color_exit');
-                    $(".key_chara").removeClass('key_chara_exit');
-
-                } else {
-                    $(".key_color").addClass('key_color_exit');
-                    $(".key_chara").addClass('key_chara_exit');
-                }
-
-                return;
-
-                $(".key_wire_loaded").css("transition", "0s");
-
-                $(".key_blur").css("filter", "blur(" + s / 100 * 4 + "px)");
-
-                var v = 100 - s;
-
-                $(".key_color").css("clip-path", "polygon(100% 100%, 100% 0, 100% " + s + "%, " + s + "% 100%, 0 100%)");
-
-                $(".key_chara").css("clip-path", "polygon(0 0, 100% 0, 100% " + v + "%, 0 " + v + "%)");
-            };
+        document.querySelector('#key_color').addEventListener("transitionend", function () {
+            keyAnim = keyAnimStatus.endEnter;
         });
 
-        $(function () {
+        $(window).scroll(function () {
 
-            $('a[href^="#"]').click(function () { // #で始まるリンクをクリックしたら実行されます
-                // スクロールの速度
-                var speed = 400; // ミリ秒で記述
-                var href = $(this).attr("href");
-                var target = $(href == "#" || href == "" ? 'html' : href);
-                var position = target.offset().top;
-                $('body,html').animate({ scrollTop: position }, speed, 'swing');
-                return false;
-            });
+            if (keyAnim == keyAnimStatus.start) {
+                $(window).scrollTop(0);
+                return;
+            }
+
         });
 
     </script>
