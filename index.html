@@ -58,7 +58,7 @@
             height: 100vh;
             z-index: 1;
             position: relative;
-            background-color: rosybrown;
+            background-color: rgb(255, 255, 255, 0.5);
         }
     </style>
 </head>
@@ -90,14 +90,25 @@
             keyColor.removeClass('key_color_exit');
         };
 
+        document.querySelector('#key_color').addEventListener("transitionend", function () {
+
+        });
+
+        var beforeScroll = 0;
+
         $(window).scroll(function () {
 
-            if ($(window).scrollTop() <= 0) {
-                keyColor.removeClass('key_color_exit');
+            var currentScroll = $(window).scrollTop();
+            var f = 0;
 
-            } else {
-                keyColor.addClass('key_color_exit');
+            if (beforeScroll <= f && f < currentScroll) { //in
+                $(".key_color").addClass('key_color_exit');
             }
+            if (f < beforeScroll && currentScroll <= f) { //out
+                $(".key_color").removeClass('key_color_exit');
+            }
+
+            beforeScroll = currentScroll;
         });
 
 
