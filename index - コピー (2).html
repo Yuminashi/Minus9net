@@ -15,12 +15,12 @@
             letter-spacing: 5px;
         }
 
-        .default {
+        .default{
             background-color: rgb(255, 255, 255, 0.65);
         }
 
         header {
-            width: 100%;
+            width: 100vw;
             height: 36px;
             position: absolute;
             top: 0;
@@ -44,7 +44,7 @@
         }
 
         .home_contents {
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             background-image: url(assets/img/key_chara.png);
             background-size: cover;
@@ -54,11 +54,8 @@
 
 
         .key_color {
-            transition: 1s;
-        }
-
-        .key_color_topLoad {
             clip-path: polygon(100% 100%, 100% 0, 0 0, 0 0, 0 100%);
+            transition: 1s;
         }
 
         .key_color_enter {
@@ -78,9 +75,10 @@
         }
 
         .lockscroll {
-            height: 100vh;
-            overflow: hidden;
+            position: fixed;
         }
+
+
     </style>
 </head>
 
@@ -89,7 +87,7 @@
     </header>
 
     <!--ホーム画面-->
-    <div id="home">
+    <div id="home"> 
         <div class="key">
             <img src="assets/img/key_wire.jpg">
             <img id="key_color" class="key_color" src="assets/img/key_color.jpg">
@@ -99,10 +97,6 @@
         </div>
     </div>
 
-    <main>
-
-    </main>
-
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -111,29 +105,25 @@
         var keyColor = $("#key_color");
         var body = $("body");
 
-        $(function () {
-            keyColor.addClass('key_color_topLoad');
-        });
-
-        $(window).on('load', function () {
+        window.onload = function () {
             keyColor.addClass('key_color_enter');
+            keyColor.removeClass('key_color_exit');
             body.addClass('lockscroll');
-        });
+        };
 
-
-
-        var isExitOp = false;
+        var isLoad = false;
 
         document.querySelector('#key_color').addEventListener("transitionend", function () {
-            if (!isExitOp) {
+            if (!isLoad) {
                 body.removeClass('lockscroll');
-                isExitOp = true;
+                isLoad = true;
             }
         });
 
         var beforeScroll = 0;
 
         $(window).scroll(function () {
+
             scrollTopAction($(window).scrollTop(), 0,
                 function () { keyColor.addClass('key_color_exit'); },
                 function () { keyColor.removeClass('key_color_exit'); });
@@ -152,7 +142,6 @@
 
             beforeScroll = scroll;
         }
-
     </script>
 </body>
 
