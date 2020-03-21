@@ -108,26 +108,38 @@
 
         var keyColor = $("#key_color");
         var body = $("body");
-        var isExitOp = false;
-        var isNonAnim = false;
+
+        var isInit = false;
+        var isActiveOpening = true;
 
         $(function () {
 
             if ($(window).scrollTop() <= 0) {
                 body.addClass('lockscroll');
                 keyColor.addClass('key_color_anim');
+                isInit = true;
             } else {
                 keyColor.addClass('key_color_exit');
-                isNonAnim = true;
             }
+
+            isActiveOpening = ($(window).scrollTop() <= 0);
 
             keyColor.addClass('key_color_enter');
         });
 
+        $(function () {
+            setTimeout(function () {
+                if (!isActiveOpening && !isInit) {
+                    keyColor.addClass('key_color_anim');
+                    isInit = true;
+                }
+            }, 1);
+        });
+
         document.querySelector('#key_color').addEventListener("transitionend", function () {
-            if (!isExitOp) {
+            if (isActiveOpening) {
                 body.removeClass('lockscroll');
-                isExitOp = true;
+                isActiveOpening = false;
             }
         });
 
@@ -137,15 +149,13 @@
 
             $(window).scroll(function () {
 
-                if (isNonAnim) {
-                    keyColor.addClass('key_color_anim');
-                    isNonAnim = false;
-                }
+
 
                 scrollTopAction($(window).scrollTop(), 0,
                     function () { keyColor.addClass('key_color_exit'); },
                     function () { keyColor.removeClass('key_color_exit'); });
             });
+
 
             function scrollTopAction(scroll, flag, inAction, outAction) {
                 var f = 0;
