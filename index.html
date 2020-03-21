@@ -54,11 +54,11 @@
 
 
         .key_color {
-            transition: 1s;
+            clip-path: polygon(100% 100%, 100% 0, 0 0, 0 0, 0 100%);
         }
 
-        .key_color_topLoad {
-            clip-path: polygon(100% 100%, 100% 0, 0 0, 0 0, 0 100%);
+        .key_color_anim {
+            transition: 1s;
         }
 
         .key_color_enter {
@@ -103,26 +103,25 @@
 
     </main>
 
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
 
         var keyColor = $("#key_color");
         var body = $("body");
+        var isExitOp = false;
+        var isNonAnim = false;
 
         $(function () {
-            keyColor.addClass('key_color_topLoad');
-        });
 
-        $(window).on('load', function () {
+            if ($(window).scrollTop() <= 0) {
+                body.addClass('lockscroll');
+                keyColor.addClass('key_color_anim');
+            } else {
+                isNonAnim = true;
+            }
+
             keyColor.addClass('key_color_enter');
-            body.addClass('lockscroll');
         });
-
-
-
-        var isExitOp = false;
 
         document.querySelector('#key_color').addEventListener("transitionend", function () {
             if (!isExitOp) {
@@ -131,27 +130,35 @@
             }
         });
 
-        var beforeScroll = 0;
+        $(function () {
 
-        $(window).scroll(function () {
-            scrollTopAction($(window).scrollTop(), 0,
-                function () { keyColor.addClass('key_color_exit'); },
-                function () { keyColor.removeClass('key_color_exit'); });
+            var beforeScroll = 0;
 
+            $(window).scroll(function () {
+
+                if (isNonAnim) {
+                    keyColor.addClass('key_color_anim');
+                    isNonAnim = false;
+                }
+
+                scrollTopAction($(window).scrollTop(), 0,
+                    function () { keyColor.addClass('key_color_exit'); },
+                    function () { keyColor.removeClass('key_color_exit'); });
+            });
+
+            function scrollTopAction(scroll, flag, inAction, outAction) {
+                var f = 0;
+
+                if (beforeScroll <= flag && flag < scroll) { //in
+                    inAction();
+                }
+                if (flag < beforeScroll && scroll <= flag) { //out
+                    outAction();
+                }
+
+                beforeScroll = scroll;
+            }
         });
-
-        function scrollTopAction(scroll, flag, inAction, outAction) {
-            var f = 0;
-
-            if (beforeScroll <= flag && flag < scroll) { //in
-                inAction();
-            }
-            if (flag < beforeScroll && scroll <= flag) { //out
-                outAction();
-            }
-
-            beforeScroll = scroll;
-        }
 
     </script>
 </body>
