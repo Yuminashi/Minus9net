@@ -19,12 +19,49 @@
             background-color: rgb(255, 255, 255, 0.65);
         }
 
-        header {
-            width: 100%;
-            height: 36px;
+        nav {
+            --header-height: 36px;
             position: absolute;
             top: 0;
-            z-index: 10;
+            width: 100%;
+            max-height: auto;
+            display: flex;
+            height: var(--header-height);
+            z-index: 1;
+        }
+
+        nav>.logo {
+            height: auto;
+            width: var(--header-height);
+            padding: 3px;
+        }
+
+        .nav_buttons {
+            flex: 1;
+            width: 100%;
+            height: auto;
+        }
+
+        .nav_buttons>ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .nav_buttons>ul>li {
+            margin: 0 4vw;
+            height: 100%;
+        }
+
+        .nav_buttons>ul>li>a {
+            margin: auto;
+            text-decoration: none;
+            font-weight: 1000;
+            font-size: 13.5px;
+            line-height: var(--header-height);
         }
 
         .key {
@@ -70,11 +107,84 @@
         }
 
         main {
-            width: 100%;
+            margin: 0 auto;
+            width: 90vw;
             min-height: 100vh;
             z-index: 1;
             position: relative;
-            background-color: rgb(255, 255, 255, 0.5);
+            
+        }
+        main>.title {
+            width: 100%;
+        }
+
+        .works {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            border-radius: 10px;
+            
+        }
+
+        .works>ul {
+            width: 80vw;
+            margin: auto;
+            padding: 20px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .works>ul>li {
+            width: 200px;
+            margin: 15px;
+        }
+
+        .work {
+            height: 200px;
+        }
+
+        .work>a {
+            text-decoration: none;
+        }
+
+        .work_img {
+            width: 100%;
+            height: 86%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: solid 1px rgb(70, 70, 70);
+        }
+
+        .work_img>img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .work_text {
+            height: 14%;
+            width: 100%;
+            font-size: 12.5px;
+            line-height: 250%;
+            font-weight: 1000;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 18px;
+            text-align: center;
+            width: 80vw;
+            margin: auto;
+            height: 60px;
+            line-height: 60px;
+            letter-spacing: 10px;
+            border-bottom: solid 1px rgb(70, 70, 70);
         }
 
         .lockscroll {
@@ -85,8 +195,18 @@
 </head>
 
 <body>
-    <header class="default">
-    </header>
+    <!--ナビゲーションバー-->
+    <nav class="default">
+        <img class="logo" src="assets/img/nav_logo.svg">
+        <div class="nav_buttons">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html">WORKS</a></li>
+                <li><a href="index.html">ABOUT</a></li>
+                <li><a href="index.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!--ホーム画面-->
     <div id="home">
@@ -100,7 +220,71 @@
     </div>
 
     <main>
+        <div class="title"></div>
+        <div class="default works" id="works">
+            <h1>WORKS</h1>
+            <ul>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_aliciaDiary.jpg"></div>
+                        <div class="work_text">AliciaDiary</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_redRust.jpg"></div>
+                        <div class="work_text">RedRust</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_cwa.jpg"></div>
+                        <div class="work_text">ねじまきアリス</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_5apple.jpg"></div>
+                        <div class="work_text">林檎を5つ集めるゲーム</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_foxgirl.jpg"></div>
+                        <div class="work_text">狐の子</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_scientist.jpg"></div>
+                        <div class="work_text">Scientist</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_clock.jpg"></div>
+                        <div class="work_text">懐中時計</div>
+                    </a>
+                </li>
+                <li class="work">
+                    <a href="index.html">
+                        <div class="work_img"><img src="assets/img/works_hayabusa.jpg"></div>
+                        <div class="work_text">隼</div>
+                    </a>
+                </li>
 
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -108,13 +292,16 @@
 
         var keyColor = $("#key_color");
         var body = $("body");
-
         var isInit = false;
         var isActiveOpening = true;
 
         $(function () {
 
-            if ($(window).scrollTop() <= 0) {
+            //初回に実行-----------------------------------
+
+            isActiveOpening = ($(window).scrollTop() <= 0);
+
+            if (isActiveOpening) { //ページトップで開いたとき
                 body.addClass('lockscroll');
                 keyColor.addClass('key_color_anim');
                 isInit = true;
@@ -122,40 +309,36 @@
                 keyColor.addClass('key_color_exit');
             }
 
-            isActiveOpening = ($(window).scrollTop() <= 0);
-
             keyColor.addClass('key_color_enter');
-        });
 
-        $(function () {
+            //1f後に実行-----------------------------------
+
             setTimeout(function () {
                 if (!isActiveOpening && !isInit) {
                     keyColor.addClass('key_color_anim');
                     isInit = true;
                 }
             }, 1);
-        });
 
-        document.querySelector('#key_color').addEventListener("transitionend", function () {
-            if (isActiveOpening) {
-                body.removeClass('lockscroll');
-                isActiveOpening = false;
-            }
-        });
+            //OP後に実行-----------------------------------
 
-        $(function () {
+            document.querySelector('#key_color').addEventListener("transitionend", function () {
+                if (isActiveOpening) {
+                    body.removeClass('lockscroll');
+                    isActiveOpening = false;
+                }
+            });
+
+            //スクロールで実行-----------------------------------
 
             var beforeScroll = 0;
 
             $(window).scroll(function () {
 
-
-
                 scrollTopAction($(window).scrollTop(), 0,
                     function () { keyColor.addClass('key_color_exit'); },
                     function () { keyColor.removeClass('key_color_exit'); });
             });
-
 
             function scrollTopAction(scroll, flag, inAction, outAction) {
                 var f = 0;
@@ -169,8 +352,19 @@
 
                 beforeScroll = scroll;
             }
-        });
 
+            // #で始まるリンクをクリックしたら実行-----------------------------------
+
+            $('a[href^="#"]').click(function () {
+                // スクロールの速度
+                var speed = 400; // ミリ秒で記述
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top;
+                $('body,html').animate({ scrollTop: position }, speed, 'swing');
+                return false;
+            });
+        });
     </script>
 </body>
 
