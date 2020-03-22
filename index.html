@@ -296,7 +296,9 @@
         var isInit = false;
         var isActiveOpening = true;
 
-        window.onload = function () {
+        
+        $(function () {
+
             //初回に実行-----------------------------------
 
             isActiveOpening = ($(window).scrollTop() <= 0);
@@ -313,17 +315,12 @@
 
             //1f後に実行-----------------------------------
 
-            setTimeout(function () {
+            var countup = setTimeout(function () {
                 if (!isActiveOpening && !isInit) {
                     keyColor.addClass('key_color_anim');
                     isInit = true;
                 }
             }, 1);
-        }
-
-        $(function () {
-
-
 
             //OP後に実行-----------------------------------
 
