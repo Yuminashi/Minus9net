@@ -112,8 +112,9 @@
             min-height: 100vh;
             z-index: 1;
             position: relative;
-            
+
         }
+
         main>.title {
             width: 100%;
         }
@@ -123,7 +124,7 @@
             height: auto;
             min-height: 100vh;
             border-radius: 10px;
-            
+
         }
 
         .works>ul {
@@ -295,8 +296,7 @@
         var isInit = false;
         var isActiveOpening = true;
 
-        $(function () {
-
+        window.onload = function () {
             //初回に実行-----------------------------------
 
             isActiveOpening = ($(window).scrollTop() <= 0);
@@ -319,6 +319,11 @@
                     isInit = true;
                 }
             }, 1);
+        }
+
+        $(function () {
+
+
 
             //OP後に実行-----------------------------------
 
