@@ -296,9 +296,7 @@
         var isInit = false;
         var isActiveOpening = true;
 
-        
-        $(function () {
-
+        window.onload = function () {
             //初回に実行-----------------------------------
 
             isActiveOpening = ($(window).scrollTop() <= 0);
@@ -315,16 +313,18 @@
 
             //1f後に実行-----------------------------------
 
-            var countup = setTimeout(function () {
+            setTimeout(function () {
                 if (!isActiveOpening && !isInit) {
                     keyColor.addClass('key_color_anim');
                     isInit = true;
                 }
             }, 1);
+        }
 
-            //OP後に実行-----------------------------------
+        $(function () {
 
-            document.querySelector('#key_color').addEventListener("transitionend", function () {
+            // transitionプロパティの場合
+            $("#key_color").on('transitionend webkitTransitionEnd', function () {
                 if (isActiveOpening) {
                     body.removeClass('lockscroll');
                     isActiveOpening = false;
