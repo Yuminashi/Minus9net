@@ -324,7 +324,7 @@
         $(function () {
 
             // transitionプロパティの場合
-            $("#key_color").on('transitionend webkitTransitionEnd', function () {
+            keyColor.on('transitionend webkitTransitionEnd', function () {
                 if (isActiveOpening) {
                     body.removeClass('lockscroll');
                     isActiveOpening = false;
